@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   end
 
   unauthenticated :user do
-    devise_scope :uder do
+    devise_scope :user do
       root 'welcome#unregistered', as: :unregistered_root
     end
   end

@@ -23,8 +23,13 @@ gem 'jbuilder', '~> 2.7'
 # gem 'bcrypt', '~> 3.1.7'
 # autentication
 gem "devise"
-#haml html
+# haml html
 gem "haml-rails"
+# style
+gem 'bootstrap-sass'
+#teme material desine
+gem 'bootstrap-material-design'
+
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
 
@@ -32,6 +37,7 @@ gem "haml-rails"
 gem 'bootsnap', '>= 1.4.2', require: false
 
 group :development, :test do
+
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
 end
