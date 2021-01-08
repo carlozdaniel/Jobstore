@@ -1,0 +1,13 @@
+!!! 5
+
+%html
+  %head
+    %title Ecommerce
+    = stylesheet_link_tag 'landing', media: 'all', 'data-turbolinks-track'=> true
+    = javascript_include_tag 'application', 'data-turbolinks-track' => true
+    = csrf_meta_tags
+  %body
+  %div{style:"#{"display:none;" if alert.nil? && notice.nil?}"}
+    %p.notice= notice
+    %p.alert= alert
+  = yield

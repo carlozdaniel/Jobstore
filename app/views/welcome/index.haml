@@ -1,3 +1,7 @@
 %h1 bienvenido
+
 %p
-  =link_to "cerrar secion", destroy_user_session_path, method: :delete
+  =link_to "iniciar sesion", new_user_session_path
+
+%p
+  =link_to "crear cuenta", new_user_registration_path
