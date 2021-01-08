@@ -24,7 +24,7 @@ gem 'jbuilder', '~> 2.7'
 # autentication
 gem "devise"
 # haml html
-gem "haml-rails"
+gem 'haml-rails'
 # style
 gem 'bootstrap-sass'
 #teme material desine

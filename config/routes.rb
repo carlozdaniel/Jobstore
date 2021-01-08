@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   devise_for :users
-  authenticate :user do
+  authenticated :user do
     root 'welcome#index'
   end
 
@@ -10,3 +10,4 @@ Rails.application.routes.draw do
     end
   end
 end
+
