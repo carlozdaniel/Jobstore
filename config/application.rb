@@ -17,6 +17,6 @@ module Ecommerce
     # the framework and any gems in your application.
    # config,active_record.raise_in_transactional_callbacks = true
 
-    config.assets.paths << Rails.rout,joint("aap","assets","fonts")
+    config.assets.paths << Rails.root.join("aap","assets","fonts")
   end
 end
