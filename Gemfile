@@ -21,6 +21,8 @@ gem 'jbuilder', '~> 2.7'
 # gem 'redis', '~> 4.0'
 # Use Active Model has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
+# Use CoffeeScript for .coffee assets and views
+gem 'coffee-rails', '~> 4.2'
 # autentication
 gem "devise"
 # haml html
@@ -40,6 +42,9 @@ group :development, :test do
 
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
+  gem 'shoulda-matchers'
+  gem 'rspec-rails'
+  gem 'factory_girl_rails', "~> 4.0"
 end
 
 group :development do
@@ -49,6 +54,7 @@ group :development do
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
+  gem 'webdrivers'
 end
 
 group :test do
@@ -56,11 +62,6 @@ group :test do
   gem 'capybara', '>= 2.15'
   gem 'selenium-webdriver'
   # Easy installation and use of web drivers to run system tests with browsers
-  gem 'webdrivers'
-  gem 'byebug'
-  gem 'shoulda-matchers'
-  gem 'rspec-rails'
-  gem 'factory_girl_rails', "~> 4.0"
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
