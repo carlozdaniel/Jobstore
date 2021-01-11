@@ -4,7 +4,7 @@ class EmailController < ApplicationController
     if @email.save
       render json: @email
     else
-      render json: @email.error, status: :unprocessable_entity
+      render json: @email.errors, status: :unprocessable_entity
     end
   end
 end
