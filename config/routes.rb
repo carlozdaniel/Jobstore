@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :products
   devise_for :users
 
   post "email/create", as: :create_email
