@@ -31,6 +31,8 @@ gem 'haml-rails'
 gem 'bootstrap-sass'
 #teme material desine
 gem 'bootstrap-material-design'
+#add image
+gem 'paperclip'
 
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
