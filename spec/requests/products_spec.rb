@@ -12,13 +12,13 @@
 # of tools you can use to make these specs even more expressive, but we're
 # sticking to rails and rspec-rails APIs to keep things simple and stable.
 
-RSpec.describe ProductsController, type: :request do
+RSpec.describe "/products", type: :request do
   # Product. As you add validations to Product, be sure to
   # adjust the attributes here as well.
   let(:valid_attributes) {
     { 
       name: "holamundo",
-      user: FactoryGirl.create(:user),
+      #user: FactryGirl.create(:user),
       pricing: 1.0
     }
   }
@@ -47,6 +47,7 @@ RSpec.describe ProductsController, type: :request do
   end
 
   describe "GET /new" do
+    login_user
     it "renders a successful response" do
       get new_product_url
       expect(response).to be_successful
@@ -54,6 +55,7 @@ RSpec.describe ProductsController, type: :request do
   end
 
   describe "GET /edit" do
+    login_user
     it "render a successful response" do
       product = Product.create! valid_attributes
       get edit_product_url(product)
@@ -62,8 +64,8 @@ RSpec.describe ProductsController, type: :request do
   end
 
   describe "POST /create" do
-    login_user
     context "with valid parameters" do
+      login_user
       it "creates a new Product" do
         expect {
           post products_url, params: { product: valid_attributes }
@@ -77,6 +79,7 @@ RSpec.describe ProductsController, type: :request do
     end
 
     context "with invalid parameters" do
+      login_user
       it "does not create a new Product" do
         expect {
           post products_url, params: { product: invalid_attributes }
@@ -88,19 +91,30 @@ RSpec.describe ProductsController, type: :request do
         expect(response).to be_successful
       end
     end
+    context "without session" do
+      it "redirects to the login page" do
+        post :create, {:products => valid_attributes}
+        expect(response).to redirect_to(new_user_session_path)
+      end
+    end
   end
 
   describe "PATCH /update" do
+    login_user
     context "with valid parameters" do
       let(:new_attributes) {
-        skip("Add a hash of attributes valid for your model")
+        {
+          name: "hoal mundo"
+          pricing: 1.0,
+          user: FactoryGirl.create(:user)
+        }
       }
-
+      
       it "updates the requested product" do
         product = Product.create! valid_attributes
         patch product_url(product), params: { product: new_attributes }
         product.reload
-        skip("Add assertions for updated state")
+      
       end
 
       it "redirects to the product" do
@@ -121,6 +135,7 @@ RSpec.describe ProductsController, type: :request do
   end
 
   describe "DELETE /destroy" do
+    login_user
     it "destroys the requested product" do
       product = Product.create! valid_attributes
       expect {
