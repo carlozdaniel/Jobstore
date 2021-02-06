@@ -12,15 +12,22 @@
 # of tools you can use to make these specs even more expressive, but we're
 # sticking to rails and rspec-rails APIs to keep things simple and stable.
 
-RSpec.describe "/products", type: :request do
+RSpec.describe ProductsController, type: :request do
   # Product. As you add validations to Product, be sure to
   # adjust the attributes here as well.
   let(:valid_attributes) {
-    skip("Add a hash of attributes valid for your model")
+    { 
+      name: "holamundo",
+      user: FactoryGirl.create(:user),
+      pricing: 1.0
+    }
   }
 
   let(:invalid_attributes) {
-    skip("Add a hash of attributes invalid for your model")
+    {
+      name: "",
+      pricing: 0
+    }
   }
 
   describe "GET /index" do
@@ -55,6 +62,7 @@ RSpec.describe "/products", type: :request do
   end
 
   describe "POST /create" do
+    login_user
     context "with valid parameters" do
       it "creates a new Product" do
         expect {
