@@ -16,6 +16,6 @@ require("channels")
 // or the `imagePath` JavaScript helper below.
 //
 // const images = require.context('../images', true)
-// bootstrap
+// require bootstrap
 // require bootstrap-material-design
 // const imagePath = (name) => images(name, true)
