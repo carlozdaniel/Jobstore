@@ -5,7 +5,11 @@ $other-grey: #E7ECEE;
 $blue: #058CC5;
 $red: #de527f;
 $light-blue: #3498DB;
-
+$teal: #009688;
+/*text*/
+.bold{
+  font-weight: bold;
+}
 .white{
   background-color: white;
 }
@@ -72,6 +76,7 @@ $light-blue: #3498DB;
   float: none !important;
   display:inline-block;
   vertical-align: middle;
+  margin-right: -4px;
 }
 .absolute{
   position: absolute;
@@ -79,6 +84,9 @@ $light-blue: #3498DB;
 /*sizes*/
 .small{
   font-size:17px;
+}
+.normal{
+  font-size: 1.2em;
 }
 .medium{
   font-size:2em;
