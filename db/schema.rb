@@ -10,7 +10,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_02_04_231136) do
+ActiveRecord::Schema.define(version: 2021_02_08_202450) do
+
+  create_table "attachments", force: :cascade do |t|
+    t.integer "product_id", null: false
+    t.string "archivo_file_name"
+    t.string "archivo_content_type"
+    t.bigint "archivo_file_size"
+    t.datetime "archivo_updated_at"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["product_id"], name: "index_attachments_on_product_id"
+  end
 
   create_table "my_emails", force: :cascade do |t|
     t.string "email"
@@ -46,5 +57,6 @@ ActiveRecord::Schema.define(version: 2021_02_04_231136) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "attachments", "products"
   add_foreign_key "products", "users"
 end
