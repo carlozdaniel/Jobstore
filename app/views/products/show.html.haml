@@ -4,7 +4,7 @@
       %h1.grey-text.bold= @product.name
     %section
       .col-xs-6.col-md-5.no-padding.inline-block
-        Todo
+        =image_tag @product.avatar.url
       .col-xs-1.inline-block.hidden-xs
       .col-xs-5.col-md-6.inline-block.text-left
         %h3.blue-text.bold.normal= @product.user.email
@@ -19,4 +19,4 @@
           %span.grey-text= "2gb"
     %section
       %h3.green-text.bold.normal Descripcion
-      %p=@product.description
+      %p= @product.description

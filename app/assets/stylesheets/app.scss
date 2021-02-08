@@ -1,3 +1,8 @@
+img{
+  max-width: 100%;
+}
+
+/*
 $green: #16a085;
 $grey: #5A6576;
 $other-grey: #E7ECEE;
@@ -47,7 +52,9 @@ $light-blue: #3498DB;
 .other-grey-text{
   color: $other-grey;
 }
-/*Paddings*/
+
+*/
+/*Paddings
 .big-padding{
   padding:2em;
 }
@@ -55,7 +62,8 @@ $light-blue: #3498DB;
   padding: 0;
 }
 
-/*alignments*/
+*/
+/*alignments
 .no-float{
   float: none !important;
 }
@@ -64,7 +72,9 @@ $light-blue: #3498DB;
   display:inline-block;
   vertical-align: middle;
 }
-/*sizes*/
+*/
+/*sizes
 .utra-big{
   font-size:7em;
 }
+*/
