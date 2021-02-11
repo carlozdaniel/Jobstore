@@ -1,7 +1,7 @@
 .col-md-3.no-padding.inline-block.in-top
   %nav.medium
     .white-text.green.col-md-12 
-      Admin %general 
+      Admin general 
 .col-md-9.inline-block.in-top
   .card.large-padding
     .col-md-9.inline-block
@@ -15,3 +15,14 @@
         Editar producto
       =link_to @product, method: :delete, class:"other-grey large-padding text-center col-md-4  inline-block",data: {confirm: "estas seguro de eliminar el producto"} do
         Eliminar producto
+    %div
+      %h3.grey-text Archivos
+      %ol
+        -@product.attachments.each do |attachment|
+          %li.large-padding.medium.grey-text.other-grey
+            .col-xs-11.inline-block= attachment.archivo_file_name
+            .col-xs-1.inline-block
+              =link_to attachment, method: :delete, :"data-confirm" => "estas seguro que quieres eliminar el archivo", class:"red-text" do
+              %i.mdi-content-clear
+      = render "attachments/form", product_id: @product.id
+
