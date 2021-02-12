@@ -10,7 +10,7 @@
       %p.big.no-margin.red-text 10 usd
     .nav.top-space
       =link_to product_path(id: @product.id,client:true), class:"other-grey large-padding text-center col-md-4  inline-block" do
-        ver cvomo cliente
+        ver como cliente
       =link_to edit_product_path(@product), class:"other-grey large-padding text-center col-md-4  inline-block" do
         Editar producto
       =link_to @product, method: :delete, class:"other-grey large-padding text-center col-md-4  inline-block",data: {confirm: "estas seguro de eliminar el producto"} do
@@ -23,6 +23,6 @@
             .col-xs-11.inline-block= attachment.archivo_file_name
             .col-xs-1.inline-block
               =link_to attachment, method: :delete, :"data-confirm" => "estas seguro que quieres eliminar el archivo", class:"red-text" do
-              %i.mdi-content-clear
+                %i.mdi-content-clear
       = render "attachments/form", product_id: @product.id
 
