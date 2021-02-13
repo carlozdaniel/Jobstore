@@ -1,8 +1,13 @@
 class AttachmentsController < ApplicationController
   before_action :authenticate_user!
-  before_action :set_attachment, only: [:destroy]
+  before_action :set_attachment, only: [:destroy, :show]
   before_action :set_product, only: [:destroy]
-  before_action :authenticate_owner!
+  before_action :authenticate_owner!, except: :show
+
+  def show
+    send_file @attachment.archivo.path
+  end
+
   def new
 
   end
@@ -22,6 +27,7 @@ class AttachmentsController < ApplicationController
   end
 
 private
+
     def set_attachment
       @attachment = Attachment.find(params[:id])
     end
@@ -31,11 +37,11 @@ private
     end
 
     def authenticate_owner!
-      if params.has_key? :attachments 
+      if params.has_key? :attachment 
         @product = Product.find(params[:attachment][:product_id])
       end
       if @product.nil? || @product.user != current_user
-        redirect_to root_path, notice: "No pudes editar este producto"
+        redirect_to root_path, notice: "No pudes editar este producto c"
       return
     end
   end
