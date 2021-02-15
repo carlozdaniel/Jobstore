@@ -29,11 +29,12 @@ gem "devise"
 gem 'haml-rails'
 # style
 gem 'bootstrap-sass'
-#teme material desine
+# teme material desine
 gem 'bootstrap-material-design'
-#add image
+# add image
 gem 'paperclip'
-
+# payment-processing
+gem 'paypal-sdk-rest'
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
 
