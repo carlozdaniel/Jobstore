@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_02_08_202450) do
+ActiveRecord::Schema.define(version: 2021_02_15_080549) do
 
   create_table "attachments", force: :cascade do |t|
     t.integer "product_id", null: false
@@ -27,6 +27,17 @@ ActiveRecord::Schema.define(version: 2021_02_08_202450) do
     t.string "email"
     t.string "ip"
     t.integer "state"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "my_payments", force: :cascade do |t|
+    t.string "email"
+    t.string "ip"
+    t.string "status"
+    t.decimal "fee", precision: 6, scale: 2
+    t.string "paypal_id"
+    t.decimal "total", precision: 6, scale: 2
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
