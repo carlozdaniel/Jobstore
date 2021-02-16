@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_02_15_080549) do
+ActiveRecord::Schema.define(version: 2021_02_15_090133) do
 
   create_table "attachments", force: :cascade do |t|
     t.integer "product_id", null: false
@@ -21,6 +21,15 @@ ActiveRecord::Schema.define(version: 2021_02_15_080549) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["product_id"], name: "index_attachments_on_product_id"
+  end
+
+  create_table "in_shopping_carts", force: :cascade do |t|
+    t.integer "product_id", null: false
+    t.integer "shopping_cart_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["product_id"], name: "index_in_shopping_carts_on_product_id"
+    t.index ["shopping_cart_id"], name: "index_in_shopping_carts_on_shopping_cart_id"
   end
 
   create_table "my_emails", force: :cascade do |t|
@@ -56,6 +65,13 @@ ActiveRecord::Schema.define(version: 2021_02_15_080549) do
     t.index ["user_id"], name: "index_products_on_user_id"
   end
 
+  create_table "shopping_carts", force: :cascade do |t|
+    t.integer "status"
+    t.string "ip"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -69,5 +85,7 @@ ActiveRecord::Schema.define(version: 2021_02_15_080549) do
   end
 
   add_foreign_key "attachments", "products"
+  add_foreign_key "in_shopping_carts", "products"
+  add_foreign_key "in_shopping_carts", "shopping_carts"
   add_foreign_key "products", "users"
 end
