@@ -14,3 +14,15 @@ RSpec.describe MyEmail, type: :model do
     expect(email.valid?).to be_truthy
   end
 end
+# == Schema Information
+#
+# Table name: my_emails
+#
+#  id         :integer         not null, primary key
+#  email      :string
+#  ip         :string
+#  state      :integer
+#  created_at :datetime        not null
+#  updated_at :datetime        not null
+#
+

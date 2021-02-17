@@ -49,8 +49,10 @@ group :development, :test do
   gem 'rspec-rails'
   #gem 'factory_girl_rails', "~> 4.0"
   gem 'factory_bot'
-  gem 'annotate'
-
+  #gem 'annotate'
+  gem 'annotate', 
+    :git => 'git://github.com/jeremyolliver/annotate_models.git', 
+    :branch => 'rake_compatibility'
 end
 
 group :development do
