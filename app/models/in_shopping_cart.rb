@@ -1,8 +1,3 @@
-class InShoppingCart < ApplicationRecord
-  belongs_to :product
-  belongs_to :shopping_cart
-end
-
 # == Schema Information
 #
 # Table name: in_shopping_carts
@@ -13,4 +8,9 @@ end
 #  created_at       :datetime        not null
 #  updated_at       :datetime        not null
 #
+class InShoppingCart < ApplicationRecord
+  belongs_to :product
+  belongs_to :shopping_cart
+  has_one :user, through: :product
+end
 

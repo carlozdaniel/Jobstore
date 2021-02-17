@@ -30,7 +30,7 @@ end
 #
 
 #Dir[Rails.root.join('spec', 'support', '**', '*.rb')].sort.each { |f| require f }
-#Dir[Rails.root.join("spec/support/helpers/**/*.rb")].sort.each { |f| require f }
+#`Dir`[Rails.root.join("spec/support/helpers/**/*.rb")].sort.each { |f| require f }
 
 # Checks for pending migrations and applies them before tests are run.
 # If you are not using ActiveRecord, you can remove these lines.
@@ -42,16 +42,18 @@ rescue ActiveRecord::PendingMigrationError => e
 end
 RSpec.configure do |config|
   # Remove this line if you're not using ActiveRecord or ActiveRecord fixtures
-  config.fixture_path = "#{::Rails.root}/spec/fixtures"
+  #config.fixture_path = "#{::Rails.root}/spec/fixtures"
 
   # If you're not using ActiveRecord, or you'd prefer not to run each of your
   # examples within a transaction, remove the following line or assign false
   # instead of true.
   config.use_transactional_fixtures = true
 
-  config.extend ControllerMacros, type: :controller
-  config.include Devise::Testhelpers, :type => :controller
-  config.include Warden::Test::Helpers
+  #config.extend ControllerMacros, type: :controller
+ # config.include Devise::Testhelpers, :type => :controller
+#  config.include Warden::Test::Helpers
+
+  config.include Devise::TestHelpers, type: :request
 
 
 
