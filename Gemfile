@@ -22,7 +22,7 @@ gem 'jbuilder', '~> 2.7'
 # Use Active Model has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 # Use CoffeeScript for .coffee assets and views
-gem 'coffee-rails', '~> 4.2'
+gem 'coffee-rails', '~> 5.0.0'
 # autentication
 gem "devise"
 # haml html
@@ -49,8 +49,10 @@ group :development, :test do
   gem 'rspec-rails'
   #gem 'factory_girl_rails', "~> 4.0"
   gem 'factory_bot'
-  gem 'annotate'
-
+  #gem 'annotate'
+  gem 'annotate', 
+    :git => 'git://github.com/jeremyolliver/annotate_models.git', 
+    :branch => 'rake_compatibility'
 end
 
 group :development do
