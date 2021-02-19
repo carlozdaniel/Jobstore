@@ -16,3 +16,4 @@ class ApplicationController < ActionController::Base
     cookies[:shopping_cart_id] = @shopping_cart.id
   end
 end
+ 
