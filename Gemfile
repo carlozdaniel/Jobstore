@@ -47,8 +47,8 @@ group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   gem 'shoulda-matchers'
   gem 'rspec-rails'
-  #gem 'factory_girl_rails', "~> 4.0"
-  gem 'factory_bot'
+  gem 'factory_girl_rails', "~> 4.0"
+  #gem 'factory_bot'
   #gem 'annotate'
   gem 'annotate', 
     :git => 'git://github.com/jeremyolliver/annotate_models.git', 
