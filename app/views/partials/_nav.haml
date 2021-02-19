@@ -1,7 +1,20 @@
 %header
   %nav.green
     %ul.no-list.no-padding.text-center
-      %li.col-md-4.inline-block
-      %li.col-md-4.inline-block.text-center
+      %li.col-md-4.inline-block.tall-padding.white-text
+        -if user_signed_in?
+          =link_to root_path, class:"right-space white-text" do
+            %i.mdi-action-shopping-basket
+            MI tienda
+          =link_to "", class:"right-space white-text" do
+            %i.mdi-action-trending-up
+            Ordenems
+          =link_to "", class:"right-space white-text" do
+            %i.mdi-action-alarm
+            Descuentos
+      %li.col-md-4.inline-block.text-center.tall-padding
         =image_tag "logoch.png",height:"25px"
-      %li.col-md-4.inline-block
+      %li.col-md-4.inline-block.tall-padding
+        =link_to carrito_path, class:"white-text" do
+          %i.mdi-action-shopping-cart
+          Mi carrito
