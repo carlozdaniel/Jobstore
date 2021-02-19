@@ -4,7 +4,7 @@ class InShoppingCartsController < ApplicationController
     if in_shopping_carts.save
       redirect_to carrito_path, notice: "Guardamos el producto"
     else
-      redirect_to products_path(:id params[:product_id]), notice: "error al guardar"
+      redirect_to products_path(id: params[:product_id]), notice: "error al guardar"
     end
   end
   def destroy

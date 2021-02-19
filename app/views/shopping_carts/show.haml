@@ -1,0 +1,14 @@
+.card.large-padding
+  %table.table.table-striped.table-hover.medium#table_shopping_cart
+    %thead
+      %td Product
+      %td costo
+      %td acciones
+    %tbody
+      -@shopping_cart.in_shopping_carts.each do |i_sh|
+        -product = i_sh.product
+        %tr{id: "#{i_sh.product.id}"}
+          %td= product.name
+          %td= product.pricing
+          %td Eliminar
+
