@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  #get 'payments/create'
   resources :attachments, only: [:create, :destroy,:new,:show]
   resources :products
   resources :in_shopping_carts, only: [:create, :destroy]
@@ -7,6 +8,8 @@ Rails.application.routes.draw do
 
   get 'email/create'
  # post 'emails/create', as: :create_email
+ post "/pagar", to: "payments#create"
+
   get "/carrito", to: "shopping_carts#show"
   get "/add/:product_id", as: :add_to_cart, to: "in_shopping_carts#create"
   

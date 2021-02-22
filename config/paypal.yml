@@ -1,12 +1,12 @@
 test: &default
 
   # Credentials for REST APIs
-  client_id: AXB-2XXlsI5_BoPJvCNNeIQi9hqMQm186Q_RiVz8Ed0GJ7Yc3b5I8E6HTA_zD9l2XU5KnIxXa4BxjdmL
-  client_secret: EO422dn3gQLgDbuwqTjzrFgFtaRLRR5BdHEESmha49TMEMShMhekhbGijuR-du8mzBIH3fM0RQWzHDcEn-sIkjGkYvQeKYHi62gOaYePZpqoarz6PghZIxLwVRkp
-
+  client_id: AR3evNGzgPmK14pWZ0ODRHRdWYVULo4SURypBX5uQ8lIfTp6VRzKJQizmgxRU-BWIuiXFlTkM09UlQK3
+  client_secret: EIJ_tqFbrenkZFfd3xK8h81iQgqri1MI0UeYQHejrpgSXxGTz3rurzs7fg87IrgmP3ZWPJ0btW7briM0
   # Mode can be 'live' or 'sandbox'
   mode: sandbox
-
+#  ssl_options:
+ #   ca_file: null
   # Credentials for Classic APIs
   app_id: APP-80W284485P519543T
   username: jb-us-seller_api1.paypal.com
@@ -14,7 +14,8 @@ test: &default
   signature: AFcWxV21C7fd0v3bYYYRCpSSRl31A7yDhhsPUU2XhtMoZXsWHFxu-RWy
   # # With Certificate
   # cert_path: "config/cert_key.pem"
-  sandbox_email_address: sb-ekhby5095784@business.example.com
+  sandbox_email_address: a20160383@utem.edu.mx
+
 
   # # IP Address
   # ip_address: 127.0.0.1
@@ -23,6 +24,7 @@ test: &default
 
 development:
   <<: *default
+  mode: live
 
 production:
   <<: *default
