@@ -27,6 +27,10 @@ class PaymentsController < ApplicationController
     })
     
     if payment.create
+      @payment = MyPayment.create!(payment.id,
+                                  ip:request.remote_ip
+                                  shopping_cart_id:cookies[:shopping_cart_id] ) 
+                                )
       redirect_to payment.links.find{|v| v.method == "REDIRECT" }.href
     else
       raise payment.error.to_yaml  
