@@ -12,7 +12,8 @@ Rails.application.routes.draw do
 
   get "/carrito", to: "shopping_carts#show"
   get "/add/:product_id", as: :add_to_cart, to: "in_shopping_carts#create"
-  
+  get "/checkout", to: "payments#checkout"
+
   post "email/create", as: :create_email
   authenticated :user do
     root 'welcome#index'

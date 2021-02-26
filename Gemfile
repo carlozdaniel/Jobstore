@@ -45,9 +45,10 @@ group :development, :test do
 
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
+  gem 'byebug-dap'
   gem 'shoulda-matchers'
   gem 'rspec-rails'
-  gem 'factory_girl_rails', "~> 4.0"
+  #gem 'factory_girl_rails', "~> 4.0"
   #gem 'factory_bot'
   #gem 'annotate'
   gem 'annotate', 

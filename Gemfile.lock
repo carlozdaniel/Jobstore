@@ -78,6 +78,9 @@ GEM
       sassc (>= 2.0.0)
     builder (3.2.4)
     byebug (11.1.3)
+    byebug-dap (0.1.4)
+      byebug (~> 11.1)
+      ruby-dap (~> 0.1.2)
     capybara (3.34.0)
       addressable
       mini_mime (>= 0.1.3)
@@ -107,11 +110,6 @@ GEM
     erubi (1.10.0)
     erubis (2.7.0)
     execjs (2.7.0)
-    factory_girl (4.9.0)
-      activesupport (>= 3.0.0)
-    factory_girl_rails (4.9.0)
-      factory_girl (~> 4.9.0)
-      railties (>= 3.0.0)
     ffi (1.14.2)
     globalid (0.4.2)
       activesupport (>= 4.2.0)
@@ -227,6 +225,7 @@ GEM
       rspec-mocks (~> 3.10)
       rspec-support (~> 3.10)
     rspec-support (3.10.1)
+    ruby-dap (0.1.3)
     ruby_parser (3.15.0)
       sexp_processor (~> 4.9)
     rubyzip (2.3.0)
@@ -301,10 +300,10 @@ DEPENDENCIES
   bootstrap-material-design
   bootstrap-sass
   byebug
+  byebug-dap
   capybara (>= 2.15)
   coffee-rails (~> 5.0.0)
   devise
-  factory_girl_rails (~> 4.0)
   haml-rails
   jbuilder (~> 2.7)
   listen (~> 3.2)

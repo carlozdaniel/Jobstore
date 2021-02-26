@@ -5,9 +5,9 @@ test: &default
   client_secret: EIJ_tqFbrenkZFfd3xK8h81iQgqri1MI0UeYQHejrpgSXxGTz3rurzs7fg87IrgmP3ZWPJ0btW7briM0
   # Mode can be 'live' or 'sandbox'
   mode: sandbox
-#  ssl_options:
- #   ca_file: null
-  # Credentials for Classic APIs
+  ssl_options:
+    ca_file: null
+ 
   app_id: APP-80W284485P519543T
   username: jb-us-seller_api1.paypal.com
   password: WX4WTU3S8MY44S7F
@@ -24,7 +24,7 @@ test: &default
 
 development:
   <<: *default
-  mode: live
+  #mode: live
 
 production:
   <<: *default

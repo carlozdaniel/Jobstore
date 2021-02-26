@@ -1,6 +1,14 @@
 class PaymentsController < ApplicationController
   require 'paypal-sdk-rest'
   include PayPal::SDK::REST
+  def checkout
+    @my_payment = MyPayment.find_by(paypal_id: params[:paymentId])
+    if @my_payment.nil?
+      redirect_to "/carrito", notice:"Error"
+    else
+      payment = Payment.find(@my_payment.paypal_id)
+    end
+  end
   def create
   # Build Payment object
     payment = Payment.new({
@@ -25,15 +33,14 @@ class PaymentsController < ApplicationController
         cancel_url: "http://localhost:3000/carrito"
       }
     })
-    
     if payment.create
-      @payment = MyPayment.create!(payment.id,
-                                  ip:request.remote_ip
-                                  shopping_cart_id:cookies[:shopping_cart_id] ) 
-                                )
+      #redirect_to payment.links.find{|v| v.method == "REDIRECT" }.href
+      @my_payment = MyPayment.create!(paypal_id: payment.id,
+                                  ip:request.remote_ip,
+                                  shopping_cart_id:cookies[:shopping_cart_id]) 
       redirect_to payment.links.find{|v| v.method == "REDIRECT" }.href
     else
-      raise payment.error.to_yaml  
+      raise payment.error.to_yaml
     end
   end
 end
