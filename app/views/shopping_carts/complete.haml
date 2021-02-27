@@ -1,0 +1,21 @@
+.card.large-padding
+  .top-space
+    %h1 gracias por tu compra
+  %table.table.table-striped.table-hover.medium#table_shopping_cart
+    %thead
+      %td Product
+      %td costo
+      %td acciones
+    %tbody
+      -@shopping_cart.in_shopping_carts.each do |i_sh|
+        -product = i_sh.product
+        %tr{id: "#{i_sh.product.id}"}
+          %td= product.name
+          %td= product.pricing
+          %td Eliminar
+  .top-space.large-padding.text-center#payment_from
+    %p.medium
+      %strong
+        Total: $
+        =@shopping_cart.total
+ 

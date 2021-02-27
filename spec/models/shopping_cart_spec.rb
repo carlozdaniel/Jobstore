@@ -4,7 +4,7 @@
 # Table name: shopping_carts
 #
 #  id         :integer         not null, primary key
-#  status     :integer         default("0")
+#  status     :string
 #  ip         :string
 #  created_at :datetime        not null
 #  updated_at :datetime        not null

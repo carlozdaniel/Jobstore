@@ -7,6 +7,12 @@ class PaymentsController < ApplicationController
       redirect_to "/carrito", notice:"Error"
     else
       payment = Payment.find(@my_payment.paypal_id)
+      if payment.execute(payer_id: params[:PayerID])
+        @my_payment.pay!
+        redirect_to carrito_path, notice:"se proceso el pago con paypal"
+      else
+        redirect_to carrito_path, notice:"Error al procesar el pago"
+      end
     end
   end
   def create
@@ -29,7 +35,7 @@ class PaymentsController < ApplicationController
         }
       ],
       redirect_urls:{ 
-        return_url: "http://localhost:3000",
+        return_url: "http://localhost:3000/checkout",
         cancel_url: "http://localhost:3000/carrito"
       }
     })

@@ -35,6 +35,8 @@ gem 'bootstrap-material-design'
 gem 'paperclip'
 # payment-processing
 gem 'paypal-sdk-rest'
+#Aasm  create state machines 
+gem 'aasm'
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
 
