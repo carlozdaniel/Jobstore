@@ -14,7 +14,7 @@ class Stores::Paypal
       transactions: [
         {
           item_list: {
-          items: [{name: "Demo", sku: :item, price: (self.shopping_cart.total / 100), currency: "USD", quantity:1}]
+          items: [self.shopping_cart.items]
           },
           amount: {
             total: (self.shopping_cart.total / 100),
