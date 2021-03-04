@@ -21,7 +21,7 @@ class PaymentsController < ApplicationController
     if paypal_helper.process_payment.create
       @my_payment = MyPayment.create!(paypal_id: paypal_helper.payment.id,
                                   ip:request.remote_ip,
-                                  shopping_cart_id:cookies[:shopping_cart_id])
+                                  shopping_cart_id: cookies[:shopping_cart_id])
       redirect_to paypal_helper.payment.links.find{|v| v.method == "REDIRECT" }.href
     else
       raise paypal_helper.payment.error.to_yaml

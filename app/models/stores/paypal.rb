@@ -20,7 +20,7 @@
           },
           amount: {
             total: (self.shopping_cart.total / 100),
-            currency: "US111D"
+            currency: "USD"
           },
           description: "Compra de tus productos en nuestra plataforma"
         }
